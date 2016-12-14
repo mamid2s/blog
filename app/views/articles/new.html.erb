@@ -1,0 +1,34 @@
+<head>
+	<style type="text/css">
+		
+textarea#message_area {
+  width: 200px;
+  height: 100px;
+}
+
+textarea#title_area{
+  width: 200px;
+  height: 30px;
+
+}
+	
+	</style>
+
+</head>
+
+<h1>New Articles</h1>
+<%= form_for :article, url: articles_path do |f| %>
+  <p>
+       <%= f.label :title %><br>
+       <%= f.text_field :title, :id => "title_area" %>
+  </p>
+	     
+   <p>
+	    <%= f.label :text %>  <br>
+		<%= f.text_area :text, :id => "message_area" %>
+   </p>
+			  
+   <p>
+			        <%= f.submit %>
+   </p>
+<% end %>
